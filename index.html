@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>
+			Employee Software Quick User Guide | কর্মচারী সফটওয়্যার ব্যবহার নির্দেশিকা
+		</title>
+		<style>
+			:root {
+				--bg: #f5f7fb;
+				--card: #ffffff;
+				--text: #182230;
+				--muted: #667085;
+				--line: #e4e7ec;
+				--accent: #107393;
+				--accent-soft: #eaf4f7;
+				--dark: #0f1720;
+				--success: #147a55;
+				--warning: #9a6700;
+				--radius: 18px;
+				--shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				margin: 0;
+				font-family:
+					Inter, 'Noto Sans Bengali', 'Hind Siliguri', Arial, sans-serif;
+				background: var(--bg);
+				color: var(--text);
+				line-height: 1.65;
+			}
+
+			.wrap {
+				max-width: 1120px;
+				margin: 0 auto;
+				padding: 32px 20px 56px;
+			}
+
+			.hero {
+				background: linear-gradient(135deg, #0e6682, #107393 55%, #168cab);
+				color: white;
+				border-radius: 24px;
+				padding: 36px;
+				box-shadow: var(--shadow);
+				margin-bottom: 26px;
+			}
+			.eyebrow {
+				font-size: 13px;
+				font-weight: 800;
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				opacity: 0.82;
+			}
+			h1 {
+				margin: 8px 0 4px;
+				font-size: clamp(30px, 5vw, 50px);
+				line-height: 1.1;
+			}
+			.bn-title {
+				font-size: clamp(20px, 3vw, 30px);
+				font-weight: 700;
+				opacity: 0.95;
+			}
+			.hero p {
+				max-width: 760px;
+				margin: 18px 0 0;
+				color: rgba(255, 255, 255, 0.9);
+			}
+
+			.section-title {
+				margin: 34px 0 14px;
+				font-size: 24px;
+				line-height: 1.25;
+			}
+			.section-title span {
+				display: block;
+				font-size: 18px;
+				color: var(--accent);
+				margin-top: 3px;
+			}
+
+			.flow {
+				display: grid;
+				grid-template-columns: repeat(6, minmax(0, 1fr));
+				gap: 10px;
+			}
+			.flow-item {
+				background: var(--card);
+				border: 1px solid var(--line);
+				border-radius: 14px;
+				padding: 16px 12px;
+				text-align: center;
+				box-shadow: 0 4px 12px rgba(16, 24, 40, 0.04);
+			}
+			.flow-num {
+				width: 32px;
+				height: 32px;
+				margin: 0 auto 8px;
+				border-radius: 50%;
+				display: grid;
+				place-items: center;
+				background: var(--accent);
+				color: #fff;
+				font-weight: 800;
+			}
+			.flow-item strong {
+				display: block;
+				font-size: 14px;
+			}
+			.flow-item small {
+				color: var(--muted);
+			}
+
+			.cards {
+				display: grid;
+				gap: 16px;
+			}
+			.card {
+				background: var(--card);
+				border: 1px solid var(--line);
+				border-radius: var(--radius);
+				padding: 22px;
+				box-shadow: 0 6px 20px rgba(16, 24, 40, 0.05);
+			}
+			.card-head {
+				display: flex;
+				gap: 14px;
+				align-items: flex-start;
+				margin-bottom: 12px;
+			}
+			.badge {
+				flex: 0 0 42px;
+				width: 42px;
+				height: 42px;
+				border-radius: 12px;
+				background: var(--accent-soft);
+				color: var(--accent);
+				display: grid;
+				place-items: center;
+				font-weight: 900;
+				font-size: 18px;
+			}
+			.card h3 {
+				margin: 0;
+				font-size: 21px;
+				line-height: 1.25;
+			}
+			.bn {
+				color: var(--accent);
+				font-weight: 700;
+				margin-top: 2px;
+			}
+			.card p {
+				margin: 10px 0;
+			}
+			.tip {
+				margin-top: 14px;
+				padding: 12px 14px;
+				border-radius: 12px;
+				background: #f8fafc;
+				border-left: 4px solid var(--accent);
+				color: #344054;
+			}
+			.tip strong {
+				color: var(--accent);
+			}
+
+			.checklist,
+			.trouble {
+				background: var(--card);
+				border: 1px solid var(--line);
+				border-radius: var(--radius);
+				box-shadow: 0 6px 20px rgba(16, 24, 40, 0.05);
+				overflow: hidden;
+			}
+			.check-row {
+				display: grid;
+				grid-template-columns: 36px 1fr;
+				gap: 12px;
+				padding: 16px 18px;
+				border-bottom: 1px solid var(--line);
+			}
+			.check-row:last-child {
+				border-bottom: 0;
+			}
+			.tick {
+				color: var(--success);
+				font-weight: 900;
+				font-size: 20px;
+			}
+			.check-row b {
+				display: block;
+			}
+			.check-row span {
+				color: var(--muted);
+			}
+
+			.trouble table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			.trouble th,
+			.trouble td {
+				padding: 15px 16px;
+				text-align: left;
+				vertical-align: top;
+				border-bottom: 1px solid var(--line);
+			}
+			.trouble tr:last-child td {
+				border-bottom: 0;
+			}
+			.trouble th {
+				background: #f8fafc;
+				font-size: 13px;
+				text-transform: uppercase;
+				letter-spacing: 0.05em;
+				color: #475467;
+			}
+			.issue {
+				font-weight: 700;
+			}
+			.issue span,
+			.solution span {
+				display: block;
+				color: var(--muted);
+				font-weight: 500;
+				margin-top: 3px;
+			}
+
+			.screenshot-box {
+				margin-top: 18px;
+				border: 2px dashed #c8d6df;
+				border-radius: 16px;
+				background: #f8fbfc;
+				min-height: 260px;
+				display: grid;
+				place-items: center;
+				overflow: hidden;
+				position: relative;
+			}
+			.screenshot-box img {
+				width: 100%;
+				height: auto;
+				display: none;
+				object-fit: contain;
+				background: #fff;
+			}
+			.screenshot-box.has-image img {
+				display: block;
+			}
+			.screenshot-box.has-image .screenshot-placeholder {
+				display: none;
+			}
+			.screenshot-placeholder {
+				padding: 30px 20px;
+				text-align: center;
+				color: #667085;
+			}
+			.screenshot-placeholder .camera {
+				font-size: 38px;
+				line-height: 1;
+				display: block;
+				margin-bottom: 10px;
+			}
+			.screenshot-placeholder strong {
+				color: var(--accent);
+				display: block;
+				font-size: 17px;
+				margin-bottom: 4px;
+			}
+			.screenshot-placeholder code {
+				display: inline-block;
+				margin-top: 8px;
+				background: #eaf4f7;
+				color: #0e6682;
+				padding: 4px 8px;
+				border-radius: 6px;
+				font-size: 12px;
+			}
+
+			.important {
+				margin-top: 24px;
+				padding: 20px 22px;
+				border-radius: 18px;
+				background: #fff8e7;
+				border: 1px solid #f2d49a;
+				color: #5f4700;
+			}
+			.important h3 {
+				margin: 0 0 8px;
+				color: var(--warning);
+			}
+
+			footer {
+				text-align: center;
+				color: var(--muted);
+				font-size: 13px;
+				margin-top: 34px;
+			}
+
+			@media (max-width: 900px) {
+				.flow {
+					grid-template-columns: repeat(3, 1fr);
+				}
+			}
+			@media (max-width: 640px) {
+				.wrap {
+					padding: 16px 12px 36px;
+				}
+				.hero {
+					padding: 26px 20px;
+					border-radius: 18px;
+				}
+				.flow {
+					grid-template-columns: repeat(2, 1fr);
+				}
+				.card {
+					padding: 18px;
+				}
+				.trouble {
+					overflow-x: auto;
+				}
+				.trouble table {
+					min-width: 680px;
+				}
+			}
+			@media print {
+				body {
+					background: white;
+				}
+				.wrap {
+					max-width: none;
+					padding: 0;
+				}
+				.hero,
+				.card,
+				.checklist,
+				.trouble {
+					box-shadow: none;
+				}
+				.hero {
+					break-inside: avoid;
+				}
+				.card {
+					break-inside: avoid;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main class="wrap">
+			<section class="hero">
+				<div class="eyebrow">Employee Software</div>
+				<h1>Quick User Guide</h1>
+				<div class="bn-title" lang="bn">সহজ ব্যবহার নির্দেশিকা</div>
+				<p>
+					Use this guide for your daily attendance, work timer, assigned tasks,
+					and software monitoring features. /
+					<span lang="bn"
+						>দৈনিক Attendance, Work Timer, Task এবং সফটওয়্যারের মনিটরিং ফিচার
+						ব্যবহারের জন্য এই গাইড অনুসরণ করুন।</span
+					>
+				</p>
+			</section>
+
+			<h2 class="section-title">
+				Daily Flow <span lang="bn">প্রতিদিনের ধাপ</span>
+			</h2>
+			<section class="flow" aria-label="Daily workflow">
+				<div class="flow-item">
+					<div class="flow-num">1</div>
+					<strong>Open App</strong><small lang="bn">অ্যাপ খুলুন</small>
+				</div>
+				<div class="flow-item">
+					<div class="flow-num">2</div>
+					<strong>Check In</strong><small lang="bn">চেক-ইন</small>
+				</div>
+				<div class="flow-item">
+					<div class="flow-num">3</div>
+					<strong>Start Timer</strong><small lang="bn">টাইমার শুরু</small>
+				</div>
+				<div class="flow-item">
+					<div class="flow-num">4</div>
+					<strong>View Tasks</strong><small lang="bn">টাস্ক দেখুন</small>
+				</div>
+				<div class="flow-item">
+					<div class="flow-num">5</div>
+					<strong>Work</strong><small lang="bn">কাজ করুন</small>
+				</div>
+				<div class="flow-item">
+					<div class="flow-num">6</div>
+					<strong>Stop + Checkout</strong><small lang="bn">শেষ + চেক-আউট</small>
+				</div>
+			</section>
+
+			<h2 class="section-title">
+				How to Use the Software
+				<span lang="bn">সফটওয়্যার কীভাবে ব্যবহার করবেন</span>
+			</h2>
+			<section class="cards">
+				<article class="card">
+					<div class="card-head">
+						<div class="badge">1</div>
+						<div>
+							<h3>App Opens Automatically</h3>
+							<div class="bn" lang="bn">
+								পিসি চালু হলে অ্যাপ স্বয়ংক্রিয়ভাবে খুলবে
+							</div>
+						</div>
+					</div>
+					<p>
+						When you turn on your office PC, the software should open
+						automatically. Keep the app running during your work session.
+					</p>
+					<p lang="bn">
+						অফিসের পিসি চালু করলে সফটওয়্যারটি স্বয়ংক্রিয়ভাবে খুলে যাওয়ার কথা।
+						কাজের সময় অ্যাপটি চালু রাখুন।
+					</p>
+					<div class="tip">
+						<strong>Tip:</strong> If it does not open, launch the software
+						manually from your PC.<br /><span lang="bn"
+							><strong>টিপস:</strong> অ্যাপটি না খুললে পিসি থেকে ম্যানুয়ালি
+							সফটওয়্যারটি চালু করুন।</span
+						>
+					</div>
+					<div class="screenshot-box" data-screenshot="1">
+						<img
+							src="images/step-1.png"
+							alt="App Auto-Open / অ্যাপ অটো ওপেন screenshot"
+							onload="this.parentElement.classList.add('has-image')"
+						/>
+						<div class="screenshot-placeholder">
+							<span class="camera">▣</span>
+							<strong>Replace with Software Screenshot</strong>
+							<span lang="bn">এখানে সফটওয়্যারের আসল স্ক্রিনশট বসান</span><br />
+							<code>images/step-1.png</code>
+						</div>
+					</div>
+				</article>
+
+				<article class="card">
+					<div class="card-head">
+						<div class="badge">2</div>
+						<div>
+							<h3>Confirm Attendance / Check In</h3>
+							<div class="bn" lang="bn">
+								উপস্থিতি নিশ্চিত করুন / চেক-ইন করুন
+							</div>
+						</div>
+					</div>
+					<p>
+						First, check whether your attendance is showing in the software. If
+						you already punched in using the biometric fingerprint machine but
+						the status is not visible, refresh the app. If needed, click
+						<b>“Check In”</b> in the software. You can also use
+						<b>“Check Out”</b> when leaving.
+					</p>
+					<p lang="bn">
+						প্রথমে সফটওয়্যারে আপনার উপস্থিতি দেখাচ্ছে কি না যাচাই করুন।
+						বায়োমেট্রিক ফিঙ্গারপ্রিন্ট মেশিনে পাঞ্চ করার পরও উপস্থিতি না দেখালে
+						অ্যাপটি রিফ্রেশ করুন। প্রয়োজন হলে সফটওয়্যারের
+						<b>“Check In”</b> বাটনে ক্লিক করুন। অফিস ছাড়ার সময়
+						<b>“Check Out”</b> ব্যবহার করতে পারবেন।
+					</p>
+					<div class="tip">
+						<strong>Tip:</strong> Do not create a second check-in if biometric
+						attendance is already synced and visible.<br /><span lang="bn"
+							><strong>টিপস:</strong> বায়োমেট্রিক উপস্থিতি সিঙ্ক হয়ে দেখালে আবার
+							আলাদা করে চেক-ইন করবেন না।</span
+						>
+					</div>
+					<div class="screenshot-box" data-screenshot="2">
+						<img
+							src="images/step-2.png"
+							alt="Attendance & Check In / উপস্থিতি ও চেক-ইন screenshot"
+							onload="this.parentElement.classList.add('has-image')"
+						/>
+						<div class="screenshot-placeholder">
+							<span class="camera">▣</span>
+							<strong>Replace with Software Screenshot</strong>
+							<span lang="bn">এখানে সফটওয়্যারের আসল স্ক্রিনশট বসান</span><br />
+							<code>images/step-2.png</code>
+						</div>
+					</div>
+				</article>
+
+				<article class="card">
+					<div class="card-head">
+						<div class="badge">3</div>
+						<div>
+							<h3>Start the Work Timer</h3>
+							<div class="bn" lang="bn">ওয়ার্ক টাইমার চালু করুন</div>
+						</div>
+					</div>
+					<p>
+						The Work Timer is an important part of your daily work record. After
+						confirming attendance, start the timer before beginning work. Keep
+						it running while you are actively working, and stop it when your
+						work session ends.
+					</p>
+					<p lang="bn">
+						Work Timer আপনার দৈনিক কাজের রেকর্ডের গুরুত্বপূর্ণ অংশ। উপস্থিতি
+						নিশ্চিত করার পর কাজ শুরু করার আগে টাইমার চালু করুন। কাজ করার সময় এটি
+						চালু রাখুন এবং কাজ শেষ হলে টাইমার বন্ধ করুন।
+					</p>
+					<div class="tip">
+						<strong>Tip:</strong> Attendance and the Work Timer are separate.
+						Being checked in does not automatically mean your work timer has
+						started.<br /><span lang="bn"
+							><strong>টিপস:</strong> Attendance এবং Work Timer আলাদা। Check In
+							করা থাকলেই Work Timer স্বয়ংক্রিয়ভাবে চালু হয়েছে—এমন নয়।</span
+						>
+					</div>
+					<div class="screenshot-box" data-screenshot="3">
+						<img
+							src="images/step-3.png"
+							alt="Work Timer / ওয়ার্ক টাইমার screenshot"
+							onload="this.parentElement.classList.add('has-image')"
+						/>
+						<div class="screenshot-placeholder">
+							<span class="camera">▣</span>
+							<strong>Replace with Software Screenshot</strong>
+							<span lang="bn">এখানে সফটওয়্যারের আসল স্ক্রিনশট বসান</span><br />
+							<code>images/step-3.png</code>
+						</div>
+					</div>
+				</article>
+
+				<article class="card">
+					<div class="card-head">
+						<div class="badge">4</div>
+						<div>
+							<h3>Check Your Tasks</h3>
+							<div class="bn" lang="bn">আপনার টাস্কগুলো দেখুন</div>
+						</div>
+					</div>
+					<p>
+						Open the Tasks section to find all work assigned to you. Review the
+						task details and status before starting. Use this section throughout
+						the day to stay focused on your assigned work.
+					</p>
+					<p lang="bn">
+						Tasks সেকশনে আপনার জন্য নির্ধারিত সব কাজ পাওয়া যাবে। কাজ শুরু করার
+						আগে টাস্কের বিস্তারিত ও স্ট্যাটাস দেখে নিন। দিনের কাজ ঠিকভাবে অনুসরণ
+						করতে এই সেকশনটি নিয়মিত দেখুন।
+					</p>
+					<div class="tip">
+						<strong>Tip:</strong> If a task is missing or unclear, contact your
+						supervisor or admin.<br /><span lang="bn"
+							><strong>টিপস:</strong> কোনো টাস্ক না থাকলে বা নির্দেশনা পরিষ্কার
+							না হলে সুপারভাইজার বা অ্যাডমিনের সাথে যোগাযোগ করুন।</span
+						>
+					</div>
+					<div class="screenshot-box" data-screenshot="4">
+						<img
+							src="images/step-4.png"
+							alt="Tasks / টাস্ক screenshot"
+							onload="this.parentElement.classList.add('has-image')"
+						/>
+						<div class="screenshot-placeholder">
+							<span class="camera">▣</span>
+							<strong>Replace with Software Screenshot</strong>
+							<span lang="bn">এখানে সফটওয়্যারের আসল স্ক্রিনশট বসান</span><br />
+							<code>images/step-4.png</code>
+						</div>
+					</div>
+				</article>
+
+				<article class="card">
+					<div class="card-head">
+						<div class="badge">4</div>
+						<div>
+							<h3>Manage Your Tasks</h3>
+							<div class="bn" lang="bn">আপনার টাস্ক ম্যানেজ করুন</div>
+						</div>
+					</div>
+
+					<p>
+						Open the Tasks section to view all work assigned to you. You can
+						also create your own tasks, update task details, change the task
+						status, and keep your progress up to date throughout the day.
+					</p>
+
+					<p lang="bn">
+						Tasks সেকশনে আপনার জন্য নির্ধারিত সব কাজ দেখতে পারবেন। পাশাপাশি আপনি
+						নিজের নতুন টাস্ক তৈরি করতে, টাস্কের তথ্য আপডেট করতে, স্ট্যাটাস
+						পরিবর্তন করতে এবং দিনের কাজের অগ্রগতি নিয়মিত আপডেট রাখতে পারবেন।
+					</p>
+
+					<div class="task-options">
+						<div class="task-option">
+							<strong>＋ Create Task</strong>
+							<span>Create and add your own new task.</span>
+							<span lang="bn">নিজের নতুন টাস্ক তৈরি করুন।</span>
+						</div>
+
+						<div class="task-option">
+							<strong>✎ Update Task</strong>
+							<span>Edit task details, notes, priority, or deadline.</span>
+							<span lang="bn"
+								>টাস্কের বিস্তারিত, নোট, অগ্রাধিকার বা সময়সীমা পরিবর্তন
+								করুন।</span
+							>
+						</div>
+
+						<div class="task-option">
+							<strong>✓ Update Status</strong>
+							<span
+								>Change task status such as Pending, In Progress, or
+								Completed.</span
+							>
+							<span lang="bn"
+								>Pending, In Progress অথবা Completed হিসেবে টাস্কের স্ট্যাটাস
+								পরিবর্তন করুন।</span
+							>
+						</div>
+					</div>
+
+					<div class="tip">
+						<strong>Tip:</strong>
+						Keep your task status updated so your supervisor can easily track
+						work progress. If an assigned task is missing or unclear, contact
+						your supervisor or admin.
+						<br />
+						<span lang="bn">
+							<strong>টিপস:</strong>
+							আপনার কাজের অগ্রগতি সহজে বোঝার জন্য টাস্কের স্ট্যাটাস নিয়মিত আপডেট
+							রাখুন। কোনো নির্ধারিত টাস্ক না থাকলে বা নির্দেশনা পরিষ্কার না হলে
+							সুপারভাইজার বা অ্যাডমিনের সাথে যোগাযোগ করুন।
+						</span>
+					</div>
+
+					<div class="screenshot-box" data-screenshot="4">
+						<img
+							src="images/step-4.png"
+							alt="Task Management / টাস্ক ম্যানেজমেন্ট screenshot"
+							onload="this.parentElement.classList.add('has-image')"
+						/>
+
+						<div class="screenshot-placeholder">
+							<span class="camera">▣</span>
+							<strong>Replace with Software Screenshot</strong>
+							<span lang="bn">এখানে সফটওয়্যারের আসল স্ক্রিনশট বসান</span>
+							<br />
+							<code>images/step-4.png</code>
+						</div>
+					</div>
+				</article>
+
+				<article class="card">
+					<div class="card-head">
+						<div class="badge">5</div>
+						<div>
+							<h3>Automatic Screenshots</h3>
+							<div class="bn" lang="bn">স্বয়ংক্রিয় স্ক্রিনশট</div>
+						</div>
+					</div>
+					<p>
+						During an active work session, the software may automatically
+						capture screenshots for work activity records. This is automatic;
+						you do not need to click or configure anything.
+					</p>
+					<p lang="bn">
+						কাজের সক্রিয় সেশনের সময় সফটওয়্যার কাজের কার্যক্রমের রেকর্ডের জন্য
+						স্বয়ংক্রিয়ভাবে স্ক্রিনশট নিতে পারে। এটি স্বয়ংক্রিয়—আপনাকে কোনো বাটনে
+						ক্লিক বা সেটিং পরিবর্তন করতে হবে না।
+					</p>
+					<div class="tip">
+						<strong>Tip:</strong> Keep only work-related content open on the
+						office PC during active work time.<br /><span lang="bn"
+							><strong>টিপস:</strong> সক্রিয় কাজের সময় অফিসের পিসিতে শুধুমাত্র
+							কাজ-সম্পর্কিত কনটেন্ট খোলা রাখুন।</span
+						>
+					</div>
+					<div class="screenshot-box" data-screenshot="5">
+						<img
+							src="images/step-5.png"
+							alt="Automatic Screenshot / অটো স্ক্রিনশট screenshot"
+							onload="this.parentElement.classList.add('has-image')"
+						/>
+						<div class="screenshot-placeholder">
+							<span class="camera">▣</span>
+							<strong>Replace with Software Screenshot</strong>
+							<span lang="bn">এখানে সফটওয়্যারের আসল স্ক্রিনশট বসান</span><br />
+							<code>images/step-5.png</code>
+						</div>
+					</div>
+				</article>
+
+				<article class="card">
+					<div class="card-head">
+						<div class="badge">6</div>
+						<div>
+							<h3>Admin Live View</h3>
+							<div class="bn" lang="bn">অ্যাডমিন লাইভ ভিউ</div>
+						</div>
+					</div>
+					<p>
+						When enabled by the organization, authorized admins may use the
+						software’s live-view function during an active work session for work
+						monitoring and support. No employee action is required for this
+						feature.
+					</p>
+					<p lang="bn">
+						প্রতিষ্ঠান কর্তৃক চালু থাকলে, অনুমোদিত অ্যাডমিন সক্রিয় কাজের সেশনে
+						কাজ পর্যবেক্ষণ ও সহায়তার জন্য সফটওয়্যারের Live View ফিচার ব্যবহার
+						করতে পারেন। এই ফিচারের জন্য কর্মীর কোনো আলাদা পদক্ষেপ প্রয়োজন নেই।
+					</p>
+					<div class="tip">
+						<strong>Tip:</strong> Use the office computer according to your
+						organization’s work and privacy policies.<br /><span lang="bn"
+							><strong>টিপস:</strong> অফিসের কম্পিউটার প্রতিষ্ঠানের কাজ ও
+							গোপনীয়তা নীতিমালা অনুযায়ী ব্যবহার করুন।</span
+						>
+					</div>
+					<div class="screenshot-box" data-screenshot="6">
+						<img
+							src="images/step-6.png"
+							alt="Admin Live View / অ্যাডমিন লাইভ ভিউ screenshot"
+							onload="this.parentElement.classList.add('has-image')"
+						/>
+						<div class="screenshot-placeholder">
+							<span class="camera">▣</span>
+							<strong>Replace with Software Screenshot</strong>
+							<span lang="bn">এখানে সফটওয়্যারের আসল স্ক্রিনশট বসান</span><br />
+							<code>images/step-6.png</code>
+						</div>
+					</div>
+				</article>
+
+				<article class="card">
+					<div class="card-head">
+						<div class="badge">7</div>
+						<div>
+							<h3>Check Notifications</h3>
+							<div class="bn" lang="bn">নোটিফিকেশন চেক করুন</div>
+						</div>
+					</div>
+
+					<p>
+						Please check the software notifications regularly during your work
+						session. Notifications may contain important updates, reminders,
+						warnings, or actions that require your attention.
+					</p>
+
+					<p lang="bn">
+						কাজের সময় নিয়মিত সফটওয়্যারের নোটিফিকেশন চেক করুন। নোটিফিকেশনে
+						গুরুত্বপূর্ণ আপডেট, রিমাইন্ডার, সতর্কতা অথবা আপনার করণীয় কোনো
+						নির্দেশনা থাকতে পারে।
+					</p>
+
+					<div class="tip">
+						<strong>Tip:</strong> If you see a new notification, open it and
+						check whether any action is required.<br />
+						<span lang="bn">
+							<strong>টিপস:</strong> নতুন নোটিফিকেশন দেখলে সেটি খুলে দেখুন কোনো
+							পদক্ষেপ নেওয়া প্রয়োজন কি না।
+						</span>
+					</div>
+
+					<div class="screenshot-box" data-screenshot="7">
+						<img
+							src="images/step-7.png"
+							alt="Check Notifications / নোটিফিকেশন চেক screenshot"
+							onload="this.parentElement.classList.add('has-image')"
+						/>
+
+						<div class="screenshot-placeholder">
+							<span class="camera">▣</span>
+							<strong>Replace with Notification Screenshot</strong>
+							<span lang="bn">এখানে নোটিফিকেশন স্ক্রিনশট বসান</span><br />
+							<code>images/step-7.png</code>
+						</div>
+					</div>
+				</article>
+			</section>
+
+			<h2 class="section-title">
+				Before You Finish Work <span lang="bn">কাজ শেষ করার আগে</span>
+			</h2>
+			<section class="checklist">
+				<div class="check-row">
+					<div class="tick">✓</div>
+					<div>
+						<b>Make sure your work timer is stopped.</b
+						><span lang="bn">Work Timer বন্ধ হয়েছে কি না নিশ্চিত করুন।</span>
+					</div>
+				</div>
+				<div class="check-row">
+					<div class="tick">✓</div>
+					<div>
+						<b>Review the status of your assigned tasks.</b
+						><span lang="bn">নির্ধারিত টাস্কগুলোর স্ট্যাটাস দেখে নিন।</span>
+					</div>
+				</div>
+				<div class="check-row">
+					<div class="tick">✓</div>
+					<div>
+						<b
+							>Click Check Out, or confirm your biometric checkout has
+							synced.</b
+						><span lang="bn"
+							>Check Out করুন অথবা বায়োমেট্রিক চেক-আউট সিঙ্ক হয়েছে কি না নিশ্চিত
+							করুন।</span
+						>
+					</div>
+				</div>
+				<div class="check-row">
+					<div class="tick">✓</div>
+					<div>
+						<b>Close the app only after your work session is complete.</b
+						><span lang="bn"
+							>কাজের সেশন সম্পূর্ণ হওয়ার পরই অ্যাপ বন্ধ করুন।</span
+						>
+					</div>
+				</div>
+			</section>
+
+			<h2 class="section-title">
+				Quick Troubleshooting <span lang="bn">দ্রুত সমাধান</span>
+			</h2>
+			<section class="trouble">
+				<table>
+					<thead>
+						<tr>
+							<th>Problem / সমস্যা</th>
+							<th>What to Do / কী করবেন</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="issue">
+								App did not open automatically<span lang="bn"
+									>অ্যাপ অটো-ওপেন হয়নি</span
+								>
+							</td>
+							<td class="solution">
+								Open it manually. If the problem repeats, inform admin /
+								IT.<span lang="bn"
+									>ম্যানুয়ালি খুলুন। সমস্যা বারবার হলে অ্যাডমিন / IT-কে
+									জানান।</span
+								>
+							</td>
+						</tr>
+						<tr>
+							<td class="issue">
+								Fingerprint punch is not showing<span lang="bn"
+									>ফিঙ্গারপ্রিন্ট পাঞ্চ দেখাচ্ছে না</span
+								>
+							</td>
+							<td class="solution">
+								Refresh the app first. Then verify the status before using Check
+								In.<span lang="bn"
+									>প্রথমে অ্যাপ রিফ্রেশ করুন। এরপর স্ট্যাটাস দেখে প্রয়োজন হলে
+									Check In করুন।</span
+								>
+							</td>
+						</tr>
+						<tr>
+							<td class="issue">
+								Work Timer is not running<span lang="bn"
+									>Work Timer চলছে না</span
+								>
+							</td>
+							<td class="solution">
+								Start the timer before continuing work. If it does not start,
+								report the issue.<span lang="bn"
+									>কাজ চালিয়ে যাওয়ার আগে টাইমার চালু করুন। চালু না হলে সমস্যাটি
+									জানান।</span
+								>
+							</td>
+						</tr>
+						<tr>
+							<td class="issue">
+								Task is missing<span lang="bn">টাস্ক পাওয়া যাচ্ছে না</span>
+							</td>
+							<td class="solution">
+								Refresh the Tasks section and contact your supervisor/admin if
+								it is still missing.<span lang="bn"
+									>Tasks সেকশন রিফ্রেশ করুন; তারপরও না থাকলে
+									সুপারভাইজার/অ্যাডমিনকে জানান।</span
+								>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+
+			<section class="important">
+				<h3>Important / <span lang="bn">গুরুত্বপূর্ণ</span></h3>
+				<div>
+					For accurate attendance and work records, always confirm Check In,
+					start the Work Timer, and complete Check Out at the correct times.
+				</div>
+				<div lang="bn">
+					সঠিক Attendance ও Work Record নিশ্চিত করতে সবসময় সঠিক সময়ে Check In
+					নিশ্চিত করুন, Work Timer চালু করুন এবং কাজ শেষে Check Out সম্পন্ন
+					করুন।
+				</div>
+			</section>
+
+			<footer>Employee Software Quick User Guide • English + বাংলা</footer>
+		</main>
+	</body>
+</html>
